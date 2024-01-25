@@ -1,4 +1,3 @@
-import java
 import jpype.imports
 import graphviz
 
@@ -7,21 +6,16 @@ fca = './ngs-fca-1.9-SNAPSHOT.jar'
 tinkerpop = './blueprints-core-2.6.0.jar'
 jpype.startJVM(classpath=[fca, guava, tinkerpop, 'classes'], convertStrings=False)
 
-from org.nmdp.ngs.fca import IntervalLattice
 from com.tinkerpop.blueprints import Direction
+def draw(lattice):
+    f = open('lattice.dot', 'w', encoding='utf-8')
+    f.write(str(lattice.toString()))
+    f.close()
 
-lattice = IntervalLattice()
-for x in range(1, 4):
-    lattice.insert(java.interval(java.int(x), java.int(x + 3)))
+    g = graphviz.Source.from_file('lattice.dot')
+    g.view()
 
-#f = open('lattice.dot', 'w', encoding='utf-8')
-#f.write(str(lattice.toString()))
-#f.close()
-
-#g = graphviz.Source.from_file('lattice.dot')
-#g.view()
-
-def dfs(start, up=True, labels=True):
+def dfs(lattice, start, up=True, labels=True):
     visited = set()
     stack = [start]
     filter_condition = lattice.up if up else lattice.down

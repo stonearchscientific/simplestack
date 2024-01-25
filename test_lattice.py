@@ -26,6 +26,6 @@ def test_find(lattice, interval):
     assert str(found.getProperty('label')) == '1:[3..4]'
 
 def test_dfs(lattice, interval):
-    found = lattice.findVertex(interval(3, 5))
-    assert dfs(found, up=False) == ['1:[3..4]', '1:[3..5]']
-    assert dfs(found, up=True) == ['(-∞..+∞)', '1:[3..5]', '1:[3..6]', '1:[2..5]']
+    start = lattice.findVertex(interval(3, 5))
+    assert dfs(lattice, start, up=False) == ['1:[3..4]', '1:[3..5]']
+    assert dfs(lattice, start, up=True) == ['(-∞..+∞)', '1:[3..5]', '1:[3..6]', '1:[2..5]']

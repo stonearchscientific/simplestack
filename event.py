@@ -11,7 +11,6 @@ class Reference(Event):
             self.type = Reference.Type.DAY
         else:
             self.type = type
-
     class Type(Enum):
         YEAR = 1
         QUARTER = 2

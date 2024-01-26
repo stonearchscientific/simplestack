@@ -1,9 +1,9 @@
 import jpype.imports
 import graphviz
 
-guava = './guava-31.0.1-jre.jar'
-fca = './ngs-fca-1.9-SNAPSHOT.jar'
-tinkerpop = './blueprints-core-2.6.0.jar'
+guava = '../guava-31.0.1-jre.jar'
+fca = '../ngs-fca-1.9-SNAPSHOT.jar'
+tinkerpop = '../blueprints-core-2.6.0.jar'
 jpype.startJVM(classpath=[fca, guava, tinkerpop, 'classes'], convertStrings=False)
 
 from com.tinkerpop.blueprints import Direction

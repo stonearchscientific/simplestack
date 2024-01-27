@@ -12,7 +12,7 @@ setup(
    author='Caleb Kennedy',
    author_email='caleb@stonearchscientific.com',
    url="https://github.com/stonearchscientific/simplestack",
-   packages=['graph'],  #same as name
+   packages=['simplestack'],  #same as name
    install_requires=['wheel', 'bar', 'greek'], #external packages as dependencies
    graph=['graph/lattice']
 )

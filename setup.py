@@ -14,5 +14,5 @@ setup(
    url="https://github.com/stonearchscientific/simplestack",
    packages=find_packages(),  #same as name
    install_requires=['wheel', 'bar', 'greek'], #external packages as dependencies
-   graph=['graph/lattice']
+   py_modules=['event', 'java'] 
 )
